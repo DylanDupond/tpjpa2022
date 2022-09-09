@@ -53,6 +53,7 @@ public class JpaTest {
 		try {
 			manager.persist(user1);
 			manager.persist(teacher1);
+			manager.persist(teacher2);
 			repository.addMeeting(Meeting.builder()
 							.start(Timestamp.valueOf("2022-09-05 10:00:00"))
 							.end(Timestamp.valueOf("2022-09-05 11:00:00"))
@@ -61,11 +62,20 @@ public class JpaTest {
 							.user(user1)
 							.teacher(teacher1)
 					.build(),manager);
+			repository.addMeeting(Meeting.builder()
+					.start(Timestamp.valueOf("2022-09-06 10:00:00"))
+					.end(Timestamp.valueOf("2022-09-06 11:00:00"))
+					.url("2Creneau")
+					.title("M2 ILA")
+					.user(user1)
+					.teacher(teacher2)
+					.build(),manager);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		tx.commit();
-		System.out.println(repository.getAllMeetings(manager).get(0).toString());
+		//System.out.println(repository.getAllMeetings(manager).get(0).toString());
+		System.out.println(repository.gettMeetingsByIdProf(manager, teacher2.getId()).toString());
 
 		manager.close();
 		EntityManagerHelper.closeEntityManagerFactory();

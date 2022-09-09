@@ -1,8 +1,5 @@
 package model;
-
-
 import lombok.*;
-
 import javax.persistence.*;
 import java.sql.Timestamp;
 
@@ -13,6 +10,14 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+@NamedQueries({
+        @NamedQuery(name="Meeting.findAll",
+                query="SELECT m FROM Meeting m"),
+        @NamedQuery(name="Meeting.findByIdProf",
+                query="SELECT m FROM Meeting m WHERE m.teacher.id = :id"),
+        @NamedQuery(name="Meeting.findByIdUser",
+                query="SELECT m FROM Meeting m WHERE m.user.id = :id"),
+})
 public class Meeting {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,7 +30,5 @@ public class Meeting {
     private User user;
     @OneToOne
     private Teacher teacher;
-
-
 
 }
