@@ -1,26 +1,29 @@
 package model;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
+@Getter
+@Setter
 public abstract class Person {
 
     private String firstName;
     private String lastName;
-    private Long id;
+    private String login;
+    private String mdp;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    @OneToMany
+    private List<Meeting> meetings;
 
     @Id
-    @GeneratedValue
-    public Long getId() {
-        return id;
-    }
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
 
 
 }

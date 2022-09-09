@@ -1,0 +1,171 @@
+/*C1*/SET SCHEMA SYSTEM_LOBS
+INSERT INTO BLOCKS VALUES(0,2147483647,0)
+COMMIT
+/*C3*/SET SCHEMA PUBLIC
+drop table if exists Meeting CASCADE 
+drop table if exists Person CASCADE 
+drop table if exists Person_Meeting CASCADE 
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table Meeting (id bigint not null, end timestamp, start timestamp, title varchar(255), url varchar(255), teacher_id bigint, user_id bigint, primary key (id))
+create table Person (DTYPE varchar(31) not null, id bigint not null, firstName varchar(255), lastName varchar(255), login varchar(255), mdp varchar(255), primary key (id))
+create table Person_Meeting (Person_id bigint not null, meetings_id bigint not null)
+alter table Person_Meeting add constraint UK_pxtw1vx21wqpwmbohn8oigfn0 unique (meetings_id)
+alter table Meeting add constraint FK6lt1ejrvjfcpy24acan042v foreign key (teacher_id) references Person
+alter table Meeting add constraint FKd3xvnhydx3y1l0khwct63vysw foreign key (user_id) references Person
+alter table Person_Meeting add constraint FK4ysuedsawuf4tp7jqf6g9bhix foreign key (meetings_id) references Meeting
+alter table Person_Meeting add constraint FKlngcal3htas0sha4qo1cxjfml foreign key (Person_id) references Person
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 2
+DISCONNECT
+/*C4*/SET SCHEMA PUBLIC
+drop table if exists Meeting CASCADE 
+drop table if exists Person CASCADE 
+drop table if exists Person_Meeting CASCADE 
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table Meeting (id bigint not null, end timestamp, start timestamp, title varchar(255), url varchar(255), teacher_id bigint, user_id bigint, primary key (id))
+create table Person (DTYPE varchar(31) not null, id bigint not null, firstName varchar(255), lastName varchar(255), login varchar(255), mdp varchar(255), primary key (id))
+create table Person_Meeting (Person_id bigint not null, meetings_id bigint not null)
+alter table Person_Meeting add constraint UK_pxtw1vx21wqpwmbohn8oigfn0 unique (meetings_id)
+alter table Meeting add constraint FK6lt1ejrvjfcpy24acan042v foreign key (teacher_id) references Person
+alter table Meeting add constraint FKd3xvnhydx3y1l0khwct63vysw foreign key (user_id) references Person
+alter table Person_Meeting add constraint FK4ysuedsawuf4tp7jqf6g9bhix foreign key (meetings_id) references Meeting
+alter table Person_Meeting add constraint FKlngcal3htas0sha4qo1cxjfml foreign key (Person_id) references Person
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 2
+DISCONNECT
+/*C5*/SET SCHEMA PUBLIC
+drop table if exists Meeting CASCADE 
+drop table if exists Person CASCADE 
+drop table if exists Person_Meeting CASCADE 
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table Meeting (id bigint not null, end timestamp, start timestamp, title varchar(255), url varchar(255), teacher_id bigint, user_id bigint, primary key (id))
+create table Person (DTYPE varchar(31) not null, id bigint not null, firstName varchar(255), lastName varchar(255), login varchar(255), mdp varchar(255), primary key (id))
+create table Person_Meeting (Person_id bigint not null, meetings_id bigint not null)
+alter table Person_Meeting add constraint UK_pxtw1vx21wqpwmbohn8oigfn0 unique (meetings_id)
+alter table Meeting add constraint FK6lt1ejrvjfcpy24acan042v foreign key (teacher_id) references Person
+alter table Meeting add constraint FKd3xvnhydx3y1l0khwct63vysw foreign key (user_id) references Person
+alter table Person_Meeting add constraint FK4ysuedsawuf4tp7jqf6g9bhix foreign key (meetings_id) references Meeting
+alter table Person_Meeting add constraint FKlngcal3htas0sha4qo1cxjfml foreign key (Person_id) references Person
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 2
+DISCONNECT
+/*C6*/SET SCHEMA PUBLIC
+drop table if exists Meeting CASCADE 
+drop table if exists Person CASCADE 
+drop table if exists Person_Meeting CASCADE 
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table Meeting (id bigint not null, end timestamp, start timestamp, title varchar(255), url varchar(255), teacher_id bigint, user_id bigint, primary key (id))
+create table Person (DTYPE varchar(31) not null, id bigint not null, firstName varchar(255), lastName varchar(255), login varchar(255), mdp varchar(255), primary key (id))
+create table Person_Meeting (Person_id bigint not null, meetings_id bigint not null)
+alter table Person_Meeting add constraint UK_pxtw1vx21wqpwmbohn8oigfn0 unique (meetings_id)
+alter table Meeting add constraint FK6lt1ejrvjfcpy24acan042v foreign key (teacher_id) references Person
+alter table Meeting add constraint FKd3xvnhydx3y1l0khwct63vysw foreign key (user_id) references Person
+alter table Person_Meeting add constraint FK4ysuedsawuf4tp7jqf6g9bhix foreign key (meetings_id) references Meeting
+alter table Person_Meeting add constraint FKlngcal3htas0sha4qo1cxjfml foreign key (Person_id) references Person
+INSERT INTO PERSON VALUES('User',1,'Dylan','Dupond','login','mdp')
+INSERT INTO PERSON VALUES('Teacher',2,'Olivier','Barais','ILove','TAA')
+INSERT INTO MEETING VALUES(3,'2022-09-05 11:00:00.000000','2022-09-05 10:00:00.000000','M2 ILA','1Creneau',2,1)
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 4
+COMMIT
+DISCONNECT
+/*C7*/SET SCHEMA PUBLIC
+drop table if exists Meeting CASCADE 
+drop table if exists Person CASCADE 
+drop table if exists Person_Meeting CASCADE 
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table Meeting (id bigint not null, end timestamp, start timestamp, title varchar(255), url varchar(255), teacher_id bigint, user_id bigint, primary key (id))
+create table Person (DTYPE varchar(31) not null, id bigint not null, firstName varchar(255), lastName varchar(255), login varchar(255), mdp varchar(255), primary key (id))
+create table Person_Meeting (Person_id bigint not null, meetings_id bigint not null)
+alter table Person_Meeting add constraint UK_pxtw1vx21wqpwmbohn8oigfn0 unique (meetings_id)
+alter table Meeting add constraint FK6lt1ejrvjfcpy24acan042v foreign key (teacher_id) references Person
+alter table Meeting add constraint FKd3xvnhydx3y1l0khwct63vysw foreign key (user_id) references Person
+alter table Person_Meeting add constraint FK4ysuedsawuf4tp7jqf6g9bhix foreign key (meetings_id) references Meeting
+alter table Person_Meeting add constraint FKlngcal3htas0sha4qo1cxjfml foreign key (Person_id) references Person
+INSERT INTO PERSON VALUES('User',1,'Dylan','Dupond','login','mdp')
+INSERT INTO PERSON VALUES('Teacher',2,'Olivier','Barais','ILove','TAA')
+INSERT INTO MEETING VALUES(3,'2022-09-05 11:00:00.000000','2022-09-05 10:00:00.000000','M2 ILA','1Creneau',2,1)
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 4
+COMMIT
+DISCONNECT
+/*C8*/SET SCHEMA PUBLIC
+drop table if exists Meeting CASCADE 
+drop table if exists Person CASCADE 
+drop table if exists Person_Meeting CASCADE 
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table Meeting (id bigint not null, end timestamp, start timestamp, title varchar(255), url varchar(255), teacher_id bigint, user_id bigint, primary key (id))
+create table Person (DTYPE varchar(31) not null, id bigint not null, firstName varchar(255), lastName varchar(255), login varchar(255), mdp varchar(255), primary key (id))
+create table Person_Meeting (Person_id bigint not null, meetings_id bigint not null)
+alter table Person_Meeting add constraint UK_pxtw1vx21wqpwmbohn8oigfn0 unique (meetings_id)
+alter table Meeting add constraint FK6lt1ejrvjfcpy24acan042v foreign key (teacher_id) references Person
+alter table Meeting add constraint FKd3xvnhydx3y1l0khwct63vysw foreign key (user_id) references Person
+alter table Person_Meeting add constraint FK4ysuedsawuf4tp7jqf6g9bhix foreign key (meetings_id) references Meeting
+alter table Person_Meeting add constraint FKlngcal3htas0sha4qo1cxjfml foreign key (Person_id) references Person
+INSERT INTO PERSON VALUES('User',1,'Dylan','Dupond','login','mdp')
+INSERT INTO PERSON VALUES('Teacher',2,'Olivier','Barais','ILove','TAA')
+INSERT INTO MEETING VALUES(3,'2022-09-05 11:00:00.000000','2022-09-05 10:00:00.000000','M2 ILA','1Creneau',2,1)
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 4
+COMMIT
+DISCONNECT
+/*C9*/SET SCHEMA PUBLIC
+drop table if exists Meeting CASCADE 
+drop table if exists Person CASCADE 
+drop table if exists Person_Meeting CASCADE 
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table Meeting (id bigint not null, end timestamp, start timestamp, title varchar(255), url varchar(255), teacher_id bigint, user_id bigint, primary key (id))
+create table Person (DTYPE varchar(31) not null, id bigint not null, firstName varchar(255), lastName varchar(255), login varchar(255), mdp varchar(255), primary key (id))
+create table Person_Meeting (Person_id bigint not null, meetings_id bigint not null)
+alter table Person_Meeting add constraint UK_pxtw1vx21wqpwmbohn8oigfn0 unique (meetings_id)
+alter table Meeting add constraint FK6lt1ejrvjfcpy24acan042v foreign key (teacher_id) references Person
+alter table Meeting add constraint FKd3xvnhydx3y1l0khwct63vysw foreign key (user_id) references Person
+alter table Person_Meeting add constraint FK4ysuedsawuf4tp7jqf6g9bhix foreign key (meetings_id) references Meeting
+alter table Person_Meeting add constraint FKlngcal3htas0sha4qo1cxjfml foreign key (Person_id) references Person
+INSERT INTO PERSON VALUES('User',1,'Dylan','Dupond','login','mdp')
+INSERT INTO PERSON VALUES('Teacher',2,'Olivier','Barais','ILove','TAA')
+INSERT INTO MEETING VALUES(3,'2022-09-05 11:00:00.000000','2022-09-05 10:00:00.000000','M2 ILA','1Creneau',2,1)
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 4
+COMMIT
+DISCONNECT
+/*C10*/SET SCHEMA PUBLIC
+drop table if exists Meeting CASCADE 
+drop table if exists Person CASCADE 
+drop table if exists Person_Meeting CASCADE 
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table Meeting (id bigint not null, end timestamp, start timestamp, title varchar(255), url varchar(255), teacher_id bigint, user_id bigint, primary key (id))
+create table Person (DTYPE varchar(31) not null, id bigint not null, firstName varchar(255), lastName varchar(255), login varchar(255), mdp varchar(255), primary key (id))
+create table Person_Meeting (Person_id bigint not null, meetings_id bigint not null)
+alter table Person_Meeting add constraint UK_pxtw1vx21wqpwmbohn8oigfn0 unique (meetings_id)
+alter table Meeting add constraint FK6lt1ejrvjfcpy24acan042v foreign key (teacher_id) references Person
+alter table Meeting add constraint FKd3xvnhydx3y1l0khwct63vysw foreign key (user_id) references Person
+alter table Person_Meeting add constraint FK4ysuedsawuf4tp7jqf6g9bhix foreign key (meetings_id) references Meeting
+alter table Person_Meeting add constraint FKlngcal3htas0sha4qo1cxjfml foreign key (Person_id) references Person
+INSERT INTO PERSON VALUES('User',1,'Dylan','Dupond','login','mdp')
+INSERT INTO PERSON VALUES('Teacher',2,'Olivier','Barais','ILove','TAA')
+INSERT INTO MEETING VALUES(3,'2022-09-05 11:00:00.000000','2022-09-05 10:00:00.000000','M2 ILA','1Creneau',2,1)
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 4
+COMMIT
+DISCONNECT
+/*C11*/SET SCHEMA PUBLIC
+drop table if exists Meeting CASCADE 
+drop table if exists Person CASCADE 
+drop table if exists Person_Meeting CASCADE 
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table Meeting (id bigint not null, end timestamp, start timestamp, title varchar(255), url varchar(255), teacher_id bigint, user_id bigint, primary key (id))
+create table Person (DTYPE varchar(31) not null, id bigint not null, firstName varchar(255), lastName varchar(255), login varchar(255), mdp varchar(255), primary key (id))
+create table Person_Meeting (Person_id bigint not null, meetings_id bigint not null)
+alter table Person_Meeting add constraint UK_pxtw1vx21wqpwmbohn8oigfn0 unique (meetings_id)
+alter table Meeting add constraint FK6lt1ejrvjfcpy24acan042v foreign key (teacher_id) references Person
+alter table Meeting add constraint FKd3xvnhydx3y1l0khwct63vysw foreign key (user_id) references Person
+alter table Person_Meeting add constraint FK4ysuedsawuf4tp7jqf6g9bhix foreign key (meetings_id) references Meeting
+alter table Person_Meeting add constraint FKlngcal3htas0sha4qo1cxjfml foreign key (Person_id) references Person
+INSERT INTO PERSON VALUES('User',1,'Dylan','Dupond','login','mdp')
+INSERT INTO PERSON VALUES('Teacher',2,'Olivier','Barais','ILove','TAA')
+INSERT INTO MEETING VALUES(3,'2022-09-05 11:00:00.000000','2022-09-05 10:00:00.000000','M2 ILA','1Creneau',2,1)
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 4
+COMMIT
+DISCONNECT
